@@ -1,8 +1,8 @@
 require 'docking_station'
 
 describe DockingStation do
-  let(:bike){double :bike, working?: true }
-  let(:broken_bike){double :bike, working?: false }
+  let(:bike) { double :bike, working?: true }
+  let(:broken_bike) { double :bike, working?: false }
 
   it 'responds to release bike' do
     expect(subject).to respond_to :release_bike
@@ -33,7 +33,7 @@ describe DockingStation do
   end
 
   it 'capacity can be changed' do
-    docking_station = DockingStation.new 50
+    docking_station = DockingStation.new
     docking_station.capacity = 10
     expect(docking_station.capacity).to eq 10
   end

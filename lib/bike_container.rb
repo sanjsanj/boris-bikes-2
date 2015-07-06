@@ -1,7 +1,6 @@
-require 'bike'
-
-class DockingStation
+module BikeContainer
   DEFAULT_CAPACITY = 20
+  
   attr_accessor :capacity
 
   def initialize capacity = DEFAULT_CAPACITY
@@ -20,7 +19,12 @@ class DockingStation
     bike.working? ? bikes << bike : broken_bikes << bike
   end
 
-  private
+  def add_bike bike
+    fail 'Docking station full' if full?
+    bike.working? ? bikes << bike : broken_bikes << bike
+  end
+
+  # private
 
   attr_reader :bikes, :broken_bikes
 
