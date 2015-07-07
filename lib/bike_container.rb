@@ -9,8 +9,8 @@ module BikeContainer
     @broken_bikes = []
   end
 
-  def release_bike
-    fail 'No bikes available' if empty?
+  def remove_bike
+    raise "#{self.class.name} empty" if empty?
     bikes.shift
   end
 
