@@ -14,4 +14,8 @@ class Bike
   def broken?
     !@working
   end
+
+  def fix
+    @working = true
+  end
 end
