@@ -1,5 +1,7 @@
 #Boris-bikes-2
 
+[![Build Status](https://travis-ci.org/sanjsanj/boris-bikes-2.svg?branch=master)](https://travis-ci.org/sanjsanj/boris-bikes-2)  [![Coverage Status](https://coveralls.io/repos/sanjsanj/boris-bikes-2/badge.svg?branch=master&service=github)](https://coveralls.io/github/sanjsanj/boris-bikes-2?branch=master)
+
 ####My restart of the Boris Bikes Ruby and Rspec kata
 
 ```

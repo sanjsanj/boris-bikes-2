@@ -20,7 +20,7 @@ module BikeContainer
 
   # private
 
-  attr_reader :bikes, :broken_bikes
+  attr_reader :bikes
 
   def empty?
     bikes.empty?
