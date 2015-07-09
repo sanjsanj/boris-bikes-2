@@ -18,8 +18,10 @@ shared_examples_for BikeContainer do
     end
 
     it 'raises an error when full' do
-      subject.capacity.times { subject.add_bike double :bike, working?: true }
-      expect { subject.add_bike double :bike, working?: true }.to raise_error "#{described_class.name} full"
+      full_error = "#{described_class.name} full"
+      bike = double :bike, working?: true
+      subject.capacity.times { subject.add_bike bike }
+      expect { subject.add_bike bike }.to raise_error full_error
     end
   end
 
@@ -37,8 +39,9 @@ shared_examples_for BikeContainer do
     end
 
     it 'raises an error when empty' do
+      empty_error = "#{described_class.name} empty"
       subject.remove_bike
-      expect { subject.remove_bike }.to raise_error "#{described_class.name} empty"
+      expect { subject.remove_bike }.to raise_error empty_error
     end
   end
 end

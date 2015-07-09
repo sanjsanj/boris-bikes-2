@@ -9,12 +9,12 @@ module BikeContainer
   end
 
   def remove_bike
-    raise "#{self.class.name} empty" if empty?
+    fail "#{self.class.name} empty" if empty?
     bikes.shift
   end
 
   def add_bike bike
-    raise "#{self.class.name} full" if full?
+    fail "#{self.class.name} full" if full?
     bikes << bike
   end
 

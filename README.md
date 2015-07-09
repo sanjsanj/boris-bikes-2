@@ -11,3 +11,9 @@ As an employed person
 So that I actually do some coding everyday
 I will make time everyday to code
 ```
+
+####Tests:
+
+```
+rake
+```

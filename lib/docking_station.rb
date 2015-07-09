@@ -4,7 +4,7 @@ class DockingStation
   include BikeContainer
 
   def release_bike
-    raise 'No bikes available' if working_bikes.empty?
+    fail 'No bikes available' if working_bikes.empty?
     bikes.delete working_bikes.pop
   end
 
@@ -13,7 +13,8 @@ class DockingStation
   end
 
   private
+
   def working_bikes
-    bikes.reject { |bike| bike.broken? }
+    bikes.reject(&:broken?)
   end
 end
