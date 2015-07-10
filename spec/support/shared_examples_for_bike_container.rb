@@ -1,4 +1,6 @@
 shared_examples_for BikeContainer do
+  let(:bike) { double :bike, working?: true }
+
   it 'has a default capacity when initialized' do
     expect(subject.capacity).to eq BikeContainer::DEFAULT_CAPACITY
   end
@@ -13,20 +15,18 @@ shared_examples_for BikeContainer do
 
   describe 'add_bike' do
     it 'receives a bike' do
-      subject.add_bike double :bike, working?: true
+      subject.add_bike bike
       expect(subject).not_to be_empty
     end
 
     it 'raises an error when full' do
       full_error = "#{described_class.name} full"
-      bike = double :bike, working?: true
       subject.capacity.times { subject.add_bike bike }
       expect { subject.add_bike bike }.to raise_error full_error
     end
   end
 
   describe 'remove_bike' do
-    let(:bike) { Bike.new }
     before(:each) { subject.add_bike bike }
 
     it 'returns a bike' do
