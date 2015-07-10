@@ -8,7 +8,7 @@ describe DockingStation do
   it_behaves_like BikeContainer
 
   it 'can dock a bike' do
-    subject.dock :bike
+    subject.dock bike
     expect(subject).not_to be_empty
   end
 

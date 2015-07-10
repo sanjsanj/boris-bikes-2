@@ -1,5 +1,6 @@
 shared_examples_for BikeContainer do
   let(:bike) { double :bike, working?: true }
+  let(:not_a_bike) { double :not_a_bike }
 
   it 'has a default capacity when initialized' do
     expect(subject.capacity).to eq BikeContainer::DEFAULT_CAPACITY
@@ -23,6 +24,10 @@ shared_examples_for BikeContainer do
       full_error = "#{described_class.name} full"
       subject.capacity.times { subject.add_bike bike }
       expect { subject.add_bike bike }.to raise_error full_error
+    end
+
+    it 'raises an error if adding anything except a bike' do
+      expect { subject.add_bike not_a_bike }.to raise_error "Not a bike"
     end
   end
 

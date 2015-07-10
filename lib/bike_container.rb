@@ -14,6 +14,7 @@ module BikeContainer
   end
 
   def add_bike bike
+    fail "Not a bike" unless bike.respond_to? :working?
     fail "#{self.class.name} full" if full?
     bikes << bike
   end
