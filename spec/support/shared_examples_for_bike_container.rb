@@ -29,6 +29,10 @@ shared_examples_for BikeContainer do
     it 'raises an error if adding anything except a bike' do
       expect { subject.add_bike not_a_bike }.to raise_error "Not a bike"
     end
+
+    it 'raises an error if adding without a bike' do
+      expect { subject.add_bike }.to raise_error "Not a bike"
+    end
   end
 
   describe 'remove_bike' do
